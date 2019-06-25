@@ -1,4 +1,4 @@
-# imagemin [![Build Status](https://travis-ci.org/imagemin/imagemin.svg?branch=master)](https://travis-ci.org/imagemin/imagemin) [![Build status](https://ci.appveyor.com/api/projects/status/wlnem7wef63k4n1t?svg=true)](https://ci.appveyor.com/project/ShinnosukeWatanabe/imagemin)
+# imagemin-concurrent-skip-preserve
 
 > Minify images seamlessly
 
@@ -6,14 +6,14 @@
 ## Install
 
 ```
-$ npm install imagemin
+$ npm install imagemin-concurrent-skip-preserve
 ```
 
 
 ## Usage
 
 ```js
-const imagemin = require('imagemin');
+const imagemin = require('imagemin-concurrent-skip-preserve');
 const imageminJpegtran = require('imagemin-jpegtran');
 const imageminPngquant = require('imagemin-pngquant');
 
@@ -32,7 +32,7 @@ const imageminPngquant = require('imagemin-pngquant');
 
 ```js
 // keep folder structure as input
-const imagemin = require('imagemin');
+const imagemin = require('imagemin-concurrent-skip-preserve');
 
 imagemin(['images/**/*.{jpg,png}'], {
   
@@ -45,7 +45,7 @@ imagemin(['images/**/*.{jpg,png}'], {
 
 ```js
 // keep folder structure as input use imagemin-webp
-const imagemin = require('imagemin');
+const imagemin = require('imagemin-concurrent-skip-preserve');
 const imageminWebp = require("imagemin-webp");
 
 imagemin(['images/**/*.{jpg,png}'], {
@@ -61,7 +61,7 @@ imagemin(['images/**/*.{jpg,png}'], {
 
 ```js
 // customize folder structure as input use imagemin-webp
-const imagemin = require('imagemin');
+const imagemin = require('imagemin-concurrent-skip-preserve');
 const imageminWebp = require("imagemin-webp");
 
 imagemin(['images/**/*.{jpg,png}'], {
@@ -80,7 +80,7 @@ imagemin(['images/**/*.{jpg,png}'], {
 
 ```js
 // Limit concurrency of minimizers
-const imagemin = require('imagemin');
+const imagemin = require('imagemin-concurrent-skip-preserve');
 const imageminWebp = require("imagemin-webp");
 
 imagemin(['images/**/*.{jpg,png}'], {
@@ -96,7 +96,7 @@ imagemin(['images/**/*.{jpg,png}'], {
 
 ```js
 // Skip files by extension
-const imagemin = require('imagemin');
+const imagemin = require('imagemin-concurrent-skip-preserve');
 const imageminWebp = require("imagemin-webp");
 
 imagemin(['images/**/*.{jpg,png}'], {
@@ -157,15 +157,6 @@ Type: `Object`
 Type: `Array`
 
 [Plugins](https://www.npmjs.com/browse/keyword/imageminplugin) to use.
-
-
-## Related
-
-- [imagemin-cli](https://github.com/imagemin/imagemin-cli) - CLI for this module
-- [imagemin-app](https://github.com/imagemin/imagemin-app) - GUI app for this module
-- [gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin) - Gulp plugin
-- [grunt-contrib-imagemin](https://github.com/gruntjs/grunt-contrib-imagemin) - Grunt plugin
-
 
 ## License
 
