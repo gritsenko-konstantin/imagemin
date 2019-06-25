@@ -78,6 +78,38 @@ imagemin(['images/**/*.{jpg,png}'], {
 // images/foo/bar/a.jpg => .webp/foo/bar/a.webp
 ```
 
+```js
+// Limit concurrency of minimizers
+const imagemin = require('imagemin');
+const imageminWebp = require("imagemin-webp");
+
+imagemin(['images/**/*.{jpg,png}'], {
+  use: [
+    imageminWebp({})
+  ],
+  concurrency: 16, // default limit: number of CPUs
+  replaceOutputDir: output => {
+    return output.replace(/images\//, '.webp/')
+  }
+});
+```
+
+```js
+// Skip files by extension
+const imagemin = require('imagemin');
+const imageminWebp = require("imagemin-webp");
+
+imagemin(['images/**/*.{jpg,png}'], {
+  use: [
+    imageminWebp({})
+  ],
+  skipExtensions: ['webp', 'jpeg'],
+  replaceOutputDir: output => {
+    return output.replace(/images\//, '.webp/')
+  }
+});
+```
+
 ## API
 
 ### imagemin(input, [output], [options])
